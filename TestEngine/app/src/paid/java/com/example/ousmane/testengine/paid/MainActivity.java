@@ -9,6 +9,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ProgressBar;
 
 import com.example.JokeStore;
 import com.example.androidlib.JokeActivity;
@@ -21,12 +22,13 @@ public class MainActivity extends ActionBarActivity implements EndpointsAsyncTas
     private final static String LOG_TAG = MainActivity.class.getSimpleName();
     SharedPreferences sharedpreferences;
     private JokeStore jokeStore = null;
-    public final Context mContext = MainActivity.this;
+    private ProgressBar spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        spinner = (ProgressBar) findViewById(R.id.progressBar);
         sharedpreferences = getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedpreferences.edit();
         editor.putInt(getString(R.string.counter), COUNTER);
@@ -75,6 +77,9 @@ public class MainActivity extends ActionBarActivity implements EndpointsAsyncTas
 
     @Override
     public void onComplete(List<String> jokes) {
+        if(jokes != null) {
+            spinner.setVisibility(View.GONE);
+        }
         jokeStore = new JokeStore();
         jokeStore.setJokeStoreList(jokes);
     }
