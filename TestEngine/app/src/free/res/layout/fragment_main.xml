@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivityFragment">
+    tools:context=".free.MainActivityFragment">
 
     <TextView
         android:id="@+id/instructions_text_view"
@@ -26,7 +26,7 @@
 
         />
 
-    <com.google.android.gms.ads.AdView
+     <com.google.android.gms.ads.AdView
         android:id="@+id/adView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

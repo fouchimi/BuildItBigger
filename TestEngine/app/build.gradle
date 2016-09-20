@@ -30,11 +30,9 @@ android {
     productFlavors {
         free {
             applicationId "com.example.ousmane.testengine.free"
-            versionName "1.0-free"
         }
         paid {
             applicationId "com.example.ousmane.testengine.paid"
-            versionName "1.0-paid"
         }
     }
 }
