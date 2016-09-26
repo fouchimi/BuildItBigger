@@ -3,6 +3,7 @@
 This is an application developed using GCE (Google cloud Endpoints) to fetch jokes from the cloud and made them accessible on both phone and tablets devices through a custom java library.
 
 <h2>Install</h2>
+$git clone https://github.com/fouchimi/BuildItBigger.git
 
 On Linux and Mac OS, you can open the project on Android Studio and run <b>./gradlew assembleDebug</b> and <b>adb -d install app/{path-to-your-apk}</b> which is often <b>app/build/outputs/apk/{apk_file}</b>. 
 
